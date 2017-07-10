@@ -13,31 +13,23 @@
         tools:layout_editor_absoluteY="8dp">
 
         <Button
-            android:id="@+id/goEmptyBin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="72dp"
-            android:text="Empty the Bin" />
-
-        <Button
             android:id="@+id/trashState"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/selectStore"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="55dp"
+            android:layout_marginTop="77dp"
             android:onClick="openListBinAndWasteContainerActivity"
-            android:text="Trash State" />
+            android:text="@string/trashState" />
 
-        <ImageView
-            android:id="@+id/imageView2"
+        <Button
+            android:id="@+id/selectStore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            app:srcCompat="@android:color/transparent" />
+            android:onClick="openSelectStoreActivity"
+            android:text="@string/selectStore" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
