@@ -27,16 +27,31 @@ public class AsyncGetTrashList extends AsyncTask<String, Integer, List<Trash>>{
     ListBinAndWasteContainerActivity lActivity;
 
     ProgressDialog barPD;
-    public AsyncGetTrashList(Context context, Activity activity){
+    String storeId;
+
+    public AsyncGetTrashList(Context context, Activity activity, String storeId){
         this.mContext = context;
         this.lActivity = (ListBinAndWasteContainerActivity) activity;
+        this.storeId = storeId;
 
         barPD = new ProgressDialog(this.mContext);
     }
+
+    @Override
+    protected void onPreExecute() {
+        try {
+            barPD = barPD.show(this.lActivity, "Loading", "Please wait");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     protected List<Trash> doInBackground(String... urls) {
 
         List<Trash> trashList = new ArrayList<>();
         try{
+
+
             HttpURLConnection conn;
             URL urlObj = new URL(""); //TODO aggiungi indirizzo connessione server
 
@@ -56,15 +71,6 @@ public class AsyncGetTrashList extends AsyncTask<String, Integer, List<Trash>>{
             e.printStackTrace();
         }
         return trashList;
-    }
-
-    @Override
-    protected void onPreExecute() {
-        try {
-            barPD = barPD.show(this.lActivity, "Loading", "Please wait");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
