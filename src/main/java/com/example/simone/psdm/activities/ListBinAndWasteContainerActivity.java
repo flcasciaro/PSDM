@@ -16,14 +16,19 @@ import com.example.simone.psdm.custom_objects.Trash;
 
 public class ListBinAndWasteContainerActivity extends AppCompatActivity {
 
+    String storeId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_bin_and_waste_container);
 
+        Intent intent = getIntent();
+        storeId = intent.getStringExtra("storeId");
+
         // Importare stato bidoni da server tramite Async?
 
-        AsyncGetTrashList trash = new AsyncGetTrashList(this.getBaseContext(), this);
+        AsyncGetTrashList trash = new AsyncGetTrashList(this.getBaseContext(), this, storeId);
+        // TODO aggiungi url es: "http://10.0.2.2:5000/api/v1.0/tasks"
         trash.execute("");
     }
 
@@ -32,7 +37,7 @@ public class ListBinAndWasteContainerActivity extends AppCompatActivity {
         super.onResume();
         //run an async process to get the list of tasks
         AsyncGetTrashList task = new AsyncGetTrashList(this.getBaseContext(), this);
-        task.execute(""); // TODO inserisci URL server
+        task.execute(""); // TODO inserisci URL server es: "http://10.0.2.2:5000/api/v1.0/tasks"
     }
 
     //this method will be invoked when the async process finishes returning the acquired list of tasks
@@ -47,6 +52,11 @@ public class ListBinAndWasteContainerActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
                 final Trash item = (Trash) parent.getItemAtPosition(position);
                 Intent intent = new Intent(parent.getContext(), TrashDetailActivity.class);
+                Bundle b = new Bundle();
+                b.putInt("trashId", item.getId());
+                intent.putExtras(b);
+
+                startActivity(intent);
             }
         });
     }
