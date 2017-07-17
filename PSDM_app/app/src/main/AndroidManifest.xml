@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.google.sample.cloudvision">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-sdk
+        android:minSdkVersion="23"
+        android:targetSdkVersion="23"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/recycle_bin"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/recycle_bin"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name="com.google.sample.cloudvision.activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.google.sample.cloudvision.activities.ListBinAndWasteContainerActivity"></activity>
+        <activity android:name="com.google.sample.cloudvision.activities.TrashDetailActivity"></activity>
+        <activity android:name="com.google.sample.cloudvision.activities.EmptyTheBinActivity"></activity>
+        <activity android:name="com.google.sample.cloudvision.activities.SelectStoreActivity"></activity>
+        <activity android:name="com.google.sample.cloudvision.activities.SelectAlarmTimeActivity"></activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name="com.google.sample.cloudvision.activities.ObjectRecognitionActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+        <service
+            android:enabled="true"
+            android:name="com.google.sample.cloudvision.PollingService" />
+        <receiver android:name=".AlarmReceiver" android:process=":remote" />
+    </application>
+
+</manifest>

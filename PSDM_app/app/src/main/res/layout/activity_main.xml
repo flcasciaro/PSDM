@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.google.sample.cloudvision.activities.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <Button
+            android:id="@+id/coudVisionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="50dp"
+            android:onClick="openObjectRecognitionActivity"
+            android:text="Plastic recognizer" />
+
+        <Button
+            android:id="@+id/setAlarmButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="openSelectAlarmTimeActivity"
+            android:text="Set Alarm"
+            android:layout_below="@+id/coudVisionButton"
+            android:layout_alignStart="@+id/coudVisionButton"
+            android:layout_marginTop="55dp" />
+
+        <Button
+            android:id="@+id/selectStoreButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/setAlarmButton"
+            android:layout_below="@+id/setAlarmButton"
+            android:layout_marginTop="56dp"
+            android:onClick="openSelectStoreActivity"
+            android:text="Settings" />
+
+        <Button
+            android:id="@+id/trashStateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/selectStoreButton"
+            android:layout_below="@+id/selectStoreButton"
+            android:layout_marginTop="60dp"
+            android:onClick="openListBinAndWasteContainerActivity"
+            android:text="@string/trashState" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/sensor_250"
+            android:layout_alignTop="@+id/coudVisionButton"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/coudVisionButton"
+            android:layout_toEndOf="@+id/coudVisionButton" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/bell_512"
+            android:layout_alignTop="@+id/setAlarmButton"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/setAlarmButton"
+            android:layout_toEndOf="@+id/setAlarmButton" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/selectStoreButton"
+            android:layout_toEndOf="@+id/selectStoreButton"
+            app:srcCompat="@drawable/settings"
+            android:layout_above="@+id/trashStateButton" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/trashStateButton"
+            app:srcCompat="@drawable/bin_512_512"
+            android:layout_alignTop="@+id/trashStateButton"
+            android:layout_toEndOf="@+id/trashStateButton" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

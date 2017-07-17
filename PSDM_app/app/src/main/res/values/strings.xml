@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">PSDM</string>
+    <string name="action_settings">Settings</string>
+    <string name="image_details_header">Details:</string>
+    <string name="image_preview_header">Preview:</string>
+    <string name="loading_message">Uploading image. Please wait.</string>
+
+    <string name="dialog_select_prompt">Choose a picture</string>
+    <string name="dialog_select_camera">Camera</string>
+    <string name="dialog_select_gallery">Gallery</string>
+
+    <string name="image_picker_error">Something is wrong with that image. Pick a different one please.</string>
+    <string name="details">Details: </string>
+    <string name="type">Type: </string>
+    <string name="typeOfWaste">Type of Waste: </string>
+    <string name="storeName">Name: </string>
+    <string name="id">ID: </string>
+    <string name="volume">Volume: </string>
+    <string name="emptyTheBin">Empty The Bin</string>
+    <string name="trashState">Trash State</string>
+    <string name="selectStore">Select Store</string>
+    <string name="negozio1">Negozio 1</string>
+    <string name="negozio2">Negozio 2</string>
+    <string name="negozio3">Negozio 3</string>
+    <string name="setAlarm">Set Alarm</string>
+
+</resources>
